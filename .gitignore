@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local configuration and secrets
+.env
+.env.*
+
+# Dataset files and local caches (the dataset is downloaded at runtime)
+data/*
+!data/.gitkeep
+.cache/
+.hf_cache/
+
+# Notebooks and tooling
+.ipynb_checkpoints/
+.idea/
+.vscode/

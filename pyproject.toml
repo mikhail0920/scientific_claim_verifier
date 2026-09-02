@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scientific-claim-verifier"
+version = "0.1.0"
+description = "ML system for verifying scientific claims against research papers."
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "torch>=2.2.0",
+    "transformers>=4.40.0",
+    "sentence-transformers>=3.0.0",
+    "datasets>=2.18.0,<4.0.0",
+    "scikit-learn>=1.4.0",
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "tqdm>=4.66.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "src"
