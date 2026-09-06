@@ -1,5 +1,6 @@
 """Retrieval baselines for scientific claims."""
 
 from .bm25 import BM25Retriever
+from .dense import DenseRetriever
 
-__all__ = ["BM25Retriever"]
+__all__ = ["BM25Retriever", "DenseRetriever"]
