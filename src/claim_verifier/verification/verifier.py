@@ -12,13 +12,12 @@ DEFAULT_NLI_MODEL = "cross-encoder/nli-deberta-v3-xsmall"
 
 
 class ClaimVerifier:
-    """Classify a claim against its gold evidence as SUPPORT or CONTRADICT.
+    """Classify a claim against evidence as SUPPORT or CONTRADICT.
 
-    The underlying pretrained NLI model returns contradiction, entailment,
-    and neutral logits. The binary SciFact task maps entailment to SUPPORT and
-    contradiction to CONTRADICT; neutral is not exposed as an output class.
-    The returned score is the selected class probability after softmax over
-    all three NLI logits.
+    Pretrained NLI checkpoints map entailment/contradiction logits to the
+    binary SciFact labels. Fine-tuned checkpoints expose the binary labels
+    directly. In either case, the returned score is the selected-class
+    probability after softmax over the model's full output layer.
     """
 
     def __init__(
@@ -62,7 +61,7 @@ class ClaimVerifier:
         claim: str,
         evidence: Sequence[str] | str,
     ) -> tuple[str, float]:
-        """Return the binary label and its full three-way NLI probability.
+        """Return a binary label and its probability from the model output.
 
         Evidence is used as the premise and the claim as the hypothesis.
         For multiple gold sentences, they are joined into one premise.

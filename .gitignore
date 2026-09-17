@@ -20,6 +20,7 @@ data/*
 !data/.gitkeep
 .cache/
 .hf_cache/
+checkpoints/
 
 # Notebooks and tooling
 .ipynb_checkpoints/
