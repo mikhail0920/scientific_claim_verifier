@@ -2,9 +2,13 @@
 __pycache__/
 *.py[cod]
 *.egg-info/
+build/
+dist/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+.coverage
+htmlcov/
 
 # Virtual environments
 .venv/
@@ -14,6 +18,9 @@ env/
 # Local configuration and secrets
 .env
 .env.*
+!.env.example
+*.pem
+*.key
 
 # Dataset files and local caches (the dataset is downloaded at runtime)
 data/*
@@ -26,3 +33,6 @@ checkpoints/
 .ipynb_checkpoints/
 .idea/
 .vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
